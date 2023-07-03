@@ -1,7 +1,7 @@
 # C-Sharp-Notes
 This repository contains my notes on the C# programming language. The notes are organized by topic, and each topic contains a brief introduction, followed by code examples and explanations.
 
-Course Content
+## Course Content
 The course content includes the following topics:
 
 * Introduction to C#
