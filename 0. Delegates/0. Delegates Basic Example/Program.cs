@@ -1,4 +1,6 @@
-﻿namespace DelegateExample
+﻿using System.IO;
+
+namespace DelegateExample
 {
     public class Program
     {
@@ -6,16 +8,34 @@
 
         static void Main(string[] args)
         {
-            LogDel logDel = new(LogTextToScreen);
+            Log log = new();
+            //LogDel logDel = new(log.LogTextToScreen);
+
+            LogDel logTextToScreenDel = new(log.LogTextToScreen);
+
+            LogDel logTextToFileDel = new(log.LogTextToFile);
+
+            LogDel multicastDel = logTextToScreenDel + logTextToFileDel;
 
             Console.WriteLine("Please Enter Your Name and Surname");
-            var saveNameSurname = Console.ReadLine();
-            logDel($"Your name is {saveNameSurname}!");
+            string? saveNameSurname = Console.ReadLine();
+            multicastDel($"Your name is {saveNameSurname}!");
         }
+    }
 
-        static void LogTextToScreen(string text)
+    public class Log
+    {
+        public void LogTextToScreen(string text)
         {
             Console.WriteLine($"{DateTime.Now}: {text}");
+        }
+
+        public void LogTextToFile(string text)
+        {
+            using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log.txt"), true))
+            {
+                sw.WriteLine($"{DateTime.Now}: {text}");
+            }
         }
     }
 }
