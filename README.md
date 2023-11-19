@@ -4,23 +4,14 @@ This repository contains my notes on the C# programming language. The notes are 
 ## Course Content
 The course content includes the following topics:
 
-* Introduction to C#
-* Variables and Data Types
-* Operators
-* Control Flow Statements
-* Functions
-* Classes and Objects
-* Arrays
-* Inheritance
-* Polymorphism
-* Interfaces
-* Exceptions
-* Asynchronous Programming
+* Delegates
+* Events
+* Generics
+* Async / Await Tasks
 * LINQ
-* ASP.NET
-* Windows Forms
-* WPF
-* Azure
+* C# Attributes
+* C# Reflections
+* .NET Core
 
 ## Getting Started
 To get started with the notes, you can either clone the repository or download the zip file. Once you have the notes, you can open them in a text editor or IDE.
